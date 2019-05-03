@@ -4156,3 +4156,46 @@ Processing by AuthorsController#index as HTML
 Completed 200 OK in 15ms (Views: 11.9ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/authors/6" for 68.174.146.0 at 2019-05-03 20:20:45 +0000
+Cannot render console from 68.174.146.0! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 6]]
+  Rendered authors/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/authors/6/posts/new" for 68.174.146.0 at 2019-05-03 20:20:46 +0000
+Cannot render console from 68.174.146.0! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Parameters: {"author_id"=>"6"}
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.3ms)
+  Rendered posts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 68.174.146.0 at 2019-05-03 20:20:52 +0000
+Cannot render console from 68.174.146.0! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3kciq1BGytRMg2hmvyhzCiBf3doJvG2/FY/RtNhPl0CzZNqBNZLXO3WbPW/PjVnkg5M5FpX+haR1R/mdx9kxIA==", "post"=>{"author_id"=>"6", "title"=>"gorse", "description"=>"book"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at", "author_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Gorse"], ["description", "book"], ["created_at", "2019-05-03 20:20:52.087623"], ["updated_at", "2019-05-03 20:20:52.087623"], ["author_id", 6]]
+  [1m[35m (93.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://167.99.15.173:46215/posts/19
+Completed 302 Found in 98ms (ActiveRecord: 94.3ms)
+
+
+Started GET "/posts/19" for 68.174.146.0 at 2019-05-03 20:20:52 +0000
+Cannot render console from 68.174.146.0! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.3ms)
+
+

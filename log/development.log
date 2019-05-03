@@ -4264,3 +4264,14 @@ Processing by PostsController#edit as HTML
 Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/authors/6555/posts/20/edit" for 68.174.146.0 at 2019-05-03 20:44:29 +0000
+Cannot render console from 68.174.146.0! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"author_id"=>"6555", "id"=>"20"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6555], ["LIMIT", 1]]
+Redirected to http://167.99.15.173:46215/authors
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/authors" for 68.174.146.0 at 2019-05-03 20:44:29 +0000
+Cannot render console from 68.174.146.0! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255

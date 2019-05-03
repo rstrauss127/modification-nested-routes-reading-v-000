@@ -4124,3 +4124,18 @@ rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
   Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
   Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (16.5ms)
+Started POST "/posts" for 68.174.146.0 at 2019-05-03 20:20:00 +0000
+Cannot render console from 68.174.146.0! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M9jN6u7BE9RzOAk/YSkI2MWwf5/I5aWruu5pldo8Kw5e+zXAixUOO0ogXDYRjCI2ZnybU1SnTbDaJkG8xaqNbg==", "post"=>{"author_id"=>"4", "title"=>"Rails Introduction Quiz111", "description"=>"b"}, "commit"=>"Create Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at", "author_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Rails Introduction Quiz111"], ["description", "b"], ["created_at", "2019-05-03 20:20:00.861255"], ["updated_at", "2019-05-03 20:20:00.861255"], ["author_id", 4]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 3.1ms)
+
+
+  
+NoMethodError (undefined method `post_path' for #<PostsController:0x00007fdc92832680>
+Did you mean?  posts_path):
+  
+app/controllers/posts_controller.rb:26:in `create'
